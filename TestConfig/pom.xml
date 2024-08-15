@@ -24,7 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>2021.0.8</spring-cloud.version>
-        <spring-framework.version>5.3.39</spring-framework.version>
+        <spring-framework.version>5.3.39</spring-framework.version><!-- 更新Spring Framework,只需要覆盖版本号 -->
         <spring-security.version>5.8.13</spring-security.version>
         <spring-security-config.version>5.8.12</spring-security-config.version>
         <sshd.version>2.12.0</sshd.version>
@@ -65,40 +65,27 @@
                     <groupId>org.yaml</groupId>
                 </exclusion>
                 <exclusion>
+                    <groupId>org.bouncycastle</groupId>
                     <artifactId>bcprov-jdk15on</artifactId>
-                    <groupId>org.bouncycastle</groupId>
                 </exclusion>
                 <exclusion>
+                    <groupId>org.bouncycastle</groupId>
                     <artifactId>bcpkix-jdk15on</artifactId>
-                    <groupId>org.bouncycastle</groupId>
                 </exclusion>
                 <exclusion>
+                    <groupId>org.bouncycastle</groupId>
                     <artifactId>bcutil-jdk15on</artifactId>
-                    <groupId>org.bouncycastle</groupId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>org.eclipse.jgit</artifactId>
                     <groupId>org.eclipse.jgit</groupId>
+                    <artifactId>org.eclipse.jgit</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
 
-        <!-- Log4j2 instead of Logback -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
-
-        <!-- 更新Spring Framework -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring-framework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring-framework.version}</version>
         </dependency>
 
         <!-- 更新Spring Security -->
@@ -185,7 +172,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>org.eclipse.jgit</groupId>
                 <artifactId>org.eclipse.jgit</artifactId>
